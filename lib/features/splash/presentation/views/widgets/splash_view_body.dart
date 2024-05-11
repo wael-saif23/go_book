@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_book/core/utils/assets.dart';
+import 'package:go_book/features/splash/presentation/views/widgets/animated_slide_text.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -27,6 +28,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
             animationController.forward();
   
   }
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,24 +53,3 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 }
 
-class AnimatedSlideText extends StatelessWidget {
-  const AnimatedSlideText({
-    super.key,
-    required this.slideAnimation,
-  });
-
-  final Animation<Offset> slideAnimation;
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      builder: (context, child) {
-        return SlideTransition(
-            position: slideAnimation,
-            child:
-                const Text('Loading...', style: TextStyle(fontSize: 10)));
-      },
-      animation: slideAnimation,
-    );
-  }
-}
