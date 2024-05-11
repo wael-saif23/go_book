@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:go_book/core/utils/assets.dart';
 
 class SplashViewBody extends StatelessWidget {
@@ -7,10 +7,9 @@ class SplashViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      body: Center(
-        child: Image.asset(AssetsData.logo)
-      )
-    );
+    return Scaffold(
+        body: Center(
+      child: Image.asset(AssetsData.logo),
+    ));
   }
 }
