@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:go_book/core/utils/assets.dart';
+import 'package:go_book/features/home/presentation/views/home_view.dart';
 import 'package:go_book/features/splash/presentation/views/widgets/animated_slide_text.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -18,16 +18,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
-    animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 3),
-    );
-    slideAnimation =
-        Tween<Offset>(begin: const Offset(0, 15), end: const Offset(0, 0))
-            .animate(animationController);
-            animationController.forward();
-  
+    intSlideAnimation();
+    futureNavigartToHomeView();
   }
+
   @override
   void dispose() {
     animationController.dispose();
@@ -51,5 +45,25 @@ class _SplashViewBodyState extends State<SplashViewBody>
       ],
     ));
   }
-}
 
+  void intSlideAnimation() {
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    );
+    slideAnimation =
+        Tween<Offset>(begin: const Offset(0, 15), end: const Offset(0, 0))
+            .animate(animationController);
+    animationController.forward();
+  }
+
+    void futureNavigartToHomeView() {
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.to(
+        const HomeView(),
+        transition: Transition.fadeIn,
+        duration: const Duration(seconds: 3),
+      );
+    });
+  }
+}
