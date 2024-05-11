@@ -12,12 +12,10 @@ class GoBook extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  GetMaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData().copyWith(
-        scaffoldBackgroundColor: KprimaryColors
-      ),
-      home: SplashView(),
+      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: KprimaryColors),
+      home: const SplashView(),
     );
   }
 }
