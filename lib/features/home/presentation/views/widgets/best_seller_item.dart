@@ -4,13 +4,10 @@ import 'package:go_book/constants.dart';
 import 'package:go_book/core/utils/assets.dart';
 import 'package:go_book/core/utils/styles.dart';
 
-
-
-
 import 'book_rating.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+class BestSellerItem extends StatelessWidget {
+  const BestSellerItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +35,6 @@ class BestSellerListViewItem extends StatelessWidget {
               width: 30,
             ),
             Expanded(
-      
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

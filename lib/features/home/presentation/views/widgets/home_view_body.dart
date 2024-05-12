@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:go_book/constants.dart';
 import 'package:go_book/core/utils/styles.dart';
-import 'package:go_book/features/home/presentation/views/widgets/best_seller_list_view.dart';
-
+import 'package:go_book/features/home/presentation/views/widgets/best_seller_sliver_list.dart';
 import 'package:go_book/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:go_book/features/home/presentation/views/widgets/featured_list_view.dart';
 
@@ -15,7 +15,7 @@ class HomeViewBody extends StatelessWidget {
       SliverToBoxAdapter(
         child: Column(children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30),
+            padding: edgeInsetsHorizontal30,
             child: CustomAppBar(),
           ),
           FreaturedListView(),
@@ -23,7 +23,7 @@ class HomeViewBody extends StatelessWidget {
             height: 36,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30),
+            padding: edgeInsetsHorizontal30,
             child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text("Best Seller", style: Styles.textStyle18)),
@@ -33,10 +33,8 @@ class HomeViewBody extends StatelessWidget {
           ),
         ]),
       ),
-      SliverFillRemaining(child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 30),
-        child: BestSellerListView(),
-      ))
+      BestSellerSliverList()
     ]);
   }
 }
+
