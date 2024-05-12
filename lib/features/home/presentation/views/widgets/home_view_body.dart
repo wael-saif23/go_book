@@ -14,11 +14,11 @@ class HomeViewBody extends StatelessWidget {
         CustomAppBar(),
         FreaturedListView(),
         SizedBox(
-          height: 8,
+          height: 32,
         ),
         Row(
           children: [
-            Text("Best Seller List", style: Styles.textMediam),
+            Text("Best Seller", style: Styles.textMediam),
           ],
         ),
       ]),
