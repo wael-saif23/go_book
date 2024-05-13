@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_book/constants.dart';
 import 'package:go_book/core/utils/assets.dart';
 
 abstract class Styles {
@@ -19,11 +20,13 @@ static const textStyle20 = TextStyle(
     fontWeight: FontWeight.normal,
     fontFamily: AssetsData.fontGTSectraFine
   );
-  static const textStyle30 = TextStyle(
+   static const textStyle30 = TextStyle(
     fontSize: 30,
-    fontWeight: FontWeight.normal,
-    fontFamily: AssetsData.fontGTSectraFine
+    fontWeight: FontWeight.w900,
+    fontFamily: kGtSectraFine,
+    letterSpacing: 1.2,
   );
 
 
 }
+const TextStyle textStyle = TextStyle();

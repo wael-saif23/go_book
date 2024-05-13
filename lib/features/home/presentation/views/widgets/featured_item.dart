@@ -9,10 +9,10 @@ class FeaturedItem extends StatelessWidget {
     return AspectRatio(
       aspectRatio: 1.35 / 2,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 4),
         child: Container(
           decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(24)),
+            borderRadius: BorderRadius.all(Radius.circular(16)),
             image: DecorationImage(
                 image: AssetImage(AssetsData.testImage), fit: BoxFit.fill),
           ),
