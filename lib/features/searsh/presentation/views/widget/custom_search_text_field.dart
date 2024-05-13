@@ -8,7 +8,7 @@ class CustomSearchTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-      padding: const EdgeInsets.symmetric( vertical: 24),
+        padding: const EdgeInsets.symmetric(vertical: 24),
         child: TextField(
           decoration: InputDecoration(
             enabledBorder: buildOutlineInputBorder(),

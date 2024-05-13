@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_book/features/home/presentation/views/widgets/custom_book_details_appbar.dart';

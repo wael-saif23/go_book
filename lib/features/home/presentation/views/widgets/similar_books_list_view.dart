@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_book/features/home/presentation/views/widgets/featured_item.dart';
 
-
-
 class SimilarBooksListview extends StatelessWidget {
   const SimilarBooksListview({super.key});
 

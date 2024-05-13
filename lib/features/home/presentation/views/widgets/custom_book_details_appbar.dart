@@ -7,7 +7,7 @@ class CustomBookDetailsAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-       padding: const EdgeInsets.symmetric( vertical: 24),
+        padding: const EdgeInsets.symmetric(vertical: 24),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

@@ -14,8 +14,7 @@ class AnimatedSlideText extends StatelessWidget {
       builder: (context, child) {
         return SlideTransition(
             position: slideAnimation,
-            child:
-                const Text('Loading...', style: TextStyle(fontSize: 10)));
+            child: const Text('Loading...', style: TextStyle(fontSize: 10)));
       },
       animation: slideAnimation,
     );

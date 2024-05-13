@@ -13,12 +13,11 @@ class GoBook extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: KprimaryColors,
-          textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme)
-          ),
-      routerConfig: AppRouter.router
-    );
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData.dark().copyWith(
+            scaffoldBackgroundColor: KprimaryColors,
+            textTheme:
+                GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme)),
+        routerConfig: AppRouter.router);
   }
 }

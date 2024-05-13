@@ -15,7 +15,7 @@ class BestSellerItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
       child: GestureDetector(
-        onTap: ()=>  GoRouter.of(context).push(AppRouter.kBookDetailsView),
+        onTap: () => GoRouter.of(context).push(AppRouter.kBookDetailsView),
         child: SizedBox(
           height: 125,
           child: Row(

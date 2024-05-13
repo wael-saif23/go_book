@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_book/features/home/presentation/views/widgets/book_details_view_body.dart';
 
-
-
 class BookDetailsView extends StatelessWidget {
   const BookDetailsView({super.key});
 

@@ -1,9 +1,6 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:go_book/core/utils/styles.dart';
 import 'package:go_book/features/home/presentation/views/widgets/similar_books_list_view.dart';
-
 
 class SimilarBooksSection extends StatelessWidget {
   const SimilarBooksSection({super.key});
