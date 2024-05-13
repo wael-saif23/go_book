@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:go_book/constants.dart';
-import 'package:go_book/features/splash/presentation/views/splash_view.dart';
+import 'package:go_book/core/utils/app_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -13,13 +12,13 @@ class GoBook extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: KprimaryColors,
           textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme)
           ),
-      home: const SplashView(),
+      routerConfig: AppRouter.router
     );
   }
 }
