@@ -25,7 +25,7 @@ class ServerFailure extends Failure {
             errorMessage: 'bad certificate , please try again later');
       case DioExceptionType.badResponse:
         return ServerFailure.fromResponse(
-          response: dioException.response!.data,
+          response: dioException.response!,
           statesCode: dioException.response!.statusCode!,
         );
       case DioExceptionType.cancel:
@@ -51,12 +51,12 @@ class ServerFailure extends Failure {
   }
 
   factory ServerFailure.fromResponse({
-    required Response response,
+    required dynamic response,
     required int statesCode,
   }) {
     if (statesCode == 400 || statesCode == 401 || statesCode == 403) {
       return ServerFailure(
-        errorMessage: response.data['error']['message'] ??
+        errorMessage: response['error']['message'] ??
             'something went wrong , please try again later',
       );
     } else if (statesCode == 404) {

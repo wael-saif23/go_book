@@ -7,8 +7,7 @@ import 'package:go_book/features/home/data/repos/home_repo_implement.dart';
 final gitIt = GetIt.instance;
 
 void setupServiceLocator() {
-  gitIt.registerSingleton<Dio>(Dio());
-  gitIt.registerSingleton<ApiService>(ApiService(dio: gitIt.get<Dio>()));
+  gitIt.registerSingleton<ApiService>(ApiService( Dio()));
   gitIt.registerSingleton<HomeRepoImplement>(
       HomeRepoImplement(apiService: gitIt.get<ApiService>()));
 }

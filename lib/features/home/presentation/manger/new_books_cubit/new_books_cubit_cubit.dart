@@ -5,9 +5,9 @@ import 'package:go_book/features/home/data/repos/home_repo.dart';
 
 part 'new_books_cubit_state.dart';
 
-class NewBooksCubitCubit extends Cubit<NewBooksCubitState> {
-  NewBooksCubitCubit(this.homeRepo) : super(NewBooksCubitInitial());
-   final HomeRepo homeRepo;
+class NewBooksCubit extends Cubit<NewBooksCubitState> {
+  NewBooksCubit({required this.homeRepo}) : super(NewBooksCubitInitial());
+  final HomeRepo homeRepo;
 
   Future<void> fetchNewBooks() async {
     emit(NewBooksCubitLoading());
