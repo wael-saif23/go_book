@@ -31,9 +31,9 @@ class FreaturedListView extends StatelessWidget {
       } else if (state is FeaturedBooksfailure) {
         return CustomErrorWidget(error: state.error);
       } else if (state is FeaturedBooksLoading) {
-        return const CustomCircularIndicator(color: Colors.white);
+        return const CustomCircularIndicator();
       } else if (state is FeaturedBooksInitial) {
-        return const CustomCircularIndicator(color: Colors.blue);
+        return const CustomCircularIndicator(color: Colors.white);
       } else {
         return const CustomCircularIndicator(color: Colors.green);
       }
