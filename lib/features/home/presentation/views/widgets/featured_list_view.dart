@@ -16,9 +16,15 @@ class FreaturedListView extends StatelessWidget {
         return SizedBox(
           height: MediaQuery.of(context).size.height * 0.30,
           child: ListView.builder(
+            physics: const BouncingScrollPhysics(),
+            itemCount: state.books.length,
             scrollDirection: Axis.horizontal,
             itemBuilder: (BuildContext context, int index) {
-              return const FeaturedItem();
+              return FeaturedItem(
+                imageUrl: state
+                        .books[index].volumeInfo?.imageLinks?.thumbnail ??
+                    "https://islandpress.org/files/default_book_cover_2015.jpg",
+              );
             },
           ),
         );
@@ -26,11 +32,9 @@ class FreaturedListView extends StatelessWidget {
         return CustomErrorWidget(error: state.error);
       } else if (state is FeaturedBooksLoading) {
         return const CustomCircularIndicator(color: Colors.white);
-      } else if (state is FeaturedBooksInitial)
-      {
+      } else if (state is FeaturedBooksInitial) {
         return const CustomCircularIndicator(color: Colors.blue);
-      }
-      else {
+      } else {
         return const CustomCircularIndicator(color: Colors.green);
       }
     });

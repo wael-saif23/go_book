@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:go_book/core/utils/assets.dart';
 
 class FeaturedItem extends StatelessWidget {
-  const FeaturedItem({super.key});
-
+  const FeaturedItem({super.key, required this.imageUrl});
+  final String imageUrl;
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
@@ -11,10 +10,10 @@ class FeaturedItem extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 4),
         child: Container(
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(16)),
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(16)),
             image: DecorationImage(
-                image: AssetImage(AssetsData.testImage), fit: BoxFit.fill),
+                image: NetworkImage(imageUrl), fit: BoxFit.fill),
           ),
         ),
       ),

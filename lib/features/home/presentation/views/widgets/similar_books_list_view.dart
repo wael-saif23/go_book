@@ -9,11 +9,12 @@ class SimilarBooksListview extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height * .15,
       child: ListView.builder(
+        
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return const Padding(
               padding: EdgeInsets.symmetric(horizontal: 5),
-              child: FeaturedItem(),
+              child: FeaturedItem(imageUrl: "https://islandpress.org/files/default_book_cover_2015.jpg",),
             );
           }),
     );
