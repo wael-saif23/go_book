@@ -3,7 +3,7 @@ import 'package:go_book/constants.dart';
 import 'package:go_book/core/utils/styles.dart';
 import 'package:go_book/features/home/data/models/book_model/book_model/book_model.dart';
 import 'package:go_book/features/home/presentation/views/widgets/featured_item.dart';
-import 'book_rating.dart';
+import 'book_count_pages.dart';
 import 'books_action.dart';
 
 class BookDetailsSection extends StatelessWidget {

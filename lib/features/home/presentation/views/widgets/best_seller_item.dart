@@ -8,7 +8,7 @@ import 'package:go_book/features/home/data/models/book_model/book_model/book_mod
 import 'package:go_book/features/home/presentation/views/widgets/featured_item.dart';
 import 'package:go_router/go_router.dart';
 
-import 'book_rating.dart';
+import 'book_count_pages.dart';
 
 class BestSellerItem extends StatelessWidget {
   const BestSellerItem({
