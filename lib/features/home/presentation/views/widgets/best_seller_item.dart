@@ -21,19 +21,18 @@ class BestSellerItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
       child: GestureDetector(
-        onTap: () => GoRouter.of(context).push(AppRouter.kBookDetailsView,extra: bookModel),
-        
+        onTap: () => GoRouter.of(context)
+            .push(AppRouter.kBookDetailsView, extra: bookModel),
         child: SizedBox(
           height: 125,
           child: Row(
             children: [
               AspectRatio(
-                  aspectRatio: 2.5 / 4,
-                  child: FeaturedItem(
-                      imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ??
-                         kStandardNetworkImage),
-                 
-                  ),
+                aspectRatio: 2.5 / 4,
+                child: FeaturedItem(
+                    imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ??
+                        kStandardNetworkImage),
+              ),
               const SizedBox(
                 width: 30,
               ),
@@ -55,7 +54,7 @@ class BestSellerItem extends StatelessWidget {
                     const SizedBox(
                       height: 3,
                     ),
-                     Text(
+                    Text(
                       bookModel.volumeInfo?.authors?[0] ?? "No Author",
                       style: Styles.textStyle14,
                     ),
@@ -71,7 +70,9 @@ class BestSellerItem extends StatelessWidget {
                           ),
                         ),
                         const Spacer(),
-                         BookRating( rating: bookModel.volumeInfo?.pageCount??0,),
+                        BookCountPages(
+                          pageNumpers: bookModel.volumeInfo?.pageCount ?? 0,
+                        ),
                       ],
                     ),
                   ],
