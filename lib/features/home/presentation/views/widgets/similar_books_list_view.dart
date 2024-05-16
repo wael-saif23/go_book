@@ -26,7 +26,7 @@ class SimilarBooksListview extends StatelessWidget {
             padding:const EdgeInsets.symmetric(horizontal: 5),
             child: GestureDetector(
               onTap: () => GoRouter.of(context)
-            .push(AppRouter.kBookDetailsView, extra: state.books[index]),
+            .pushReplacement(AppRouter.kBookDetailsView, extra: state.books[index]),
               child: FeaturedItem(
                 imageUrl:state.books[index].volumeInfo?.imageLinks?.thumbnail ?? kStandardNetworkImage
                     ,

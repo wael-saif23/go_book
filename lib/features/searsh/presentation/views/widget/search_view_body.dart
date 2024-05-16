@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:go_book/features/home/presentation/views/widgets/best_seller_item.dart';
 import '../../../../../core/utils/styles.dart';
 import 'custom_search_text_field.dart';
 
