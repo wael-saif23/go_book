@@ -21,13 +21,7 @@ class FeaturedItem extends StatelessWidget {
             ),
             errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
-          // Container(
-          //   decoration: BoxDecoration(
-          //     borderRadius: const BorderRadius.all(Radius.circular(16)),
-          //     image: DecorationImage(
-          //         image: NetworkImage(imageUrl), fit: BoxFit.fill),
-          //   ),
-          // ),
+          
         ),
       ),
     );

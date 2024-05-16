@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:go_book/constants.dart';
 import 'package:go_book/core/utils/app_router.dart';
-import 'package:go_book/core/utils/assets.dart';
+
 import 'package:go_book/core/utils/styles.dart';
+
+import 'package:go_book/features/home/data/models/book_model/book_model/book_model.dart';
+import 'package:go_book/features/home/presentation/views/widgets/featured_item.dart';
 import 'package:go_router/go_router.dart';
 
 import 'book_rating.dart';
 
 class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({super.key});
-
+  const BestSellerItem({
+    super.key,
+    required this.bookModel,
+  });
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,19 +27,12 @@ class BestSellerItem extends StatelessWidget {
           child: Row(
             children: [
               AspectRatio(
-                aspectRatio: 2.5 / 4,
-                child: Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Colors.red,
-                      image: const DecorationImage(
-                        fit: BoxFit.fill,
-                        image: AssetImage(
-                          AssetsData.testImage,
-                        ),
-                      )),
-                ),
-              ),
+                  aspectRatio: 2.5 / 4,
+                  child: FeaturedItem(
+                      imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ??
+                          "https://islandpress.org/files/default_book_cover_2015.jpg")
+                 
+                  ),
               const SizedBox(
                 width: 30,
               ),
@@ -44,7 +43,7 @@ class BestSellerItem extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * .5,
                       child: Text(
-                        'Harry Potter and the Goblet of Fire',
+                        bookModel.volumeInfo?.title ?? "No Title",
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: Styles.textStyle20.copyWith(
@@ -55,8 +54,8 @@ class BestSellerItem extends StatelessWidget {
                     const SizedBox(
                       height: 3,
                     ),
-                    const Text(
-                      'J.K. Rowling',
+                     Text(
+                      bookModel.volumeInfo?.authors?[0] ?? "No Author",
                       style: Styles.textStyle14,
                     ),
                     const SizedBox(
@@ -65,13 +64,13 @@ class BestSellerItem extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          '19.99 €',
+                          'Free',
                           style: Styles.textStyle20.copyWith(
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         const Spacer(),
-                        const BookRating(),
+                         BookRating( rating: bookModel.volumeInfo?.pageCount??0,),
                       ],
                     ),
                   ],

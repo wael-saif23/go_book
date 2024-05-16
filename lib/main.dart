@@ -28,7 +28,7 @@ class GoBook extends StatelessWidget {
         BlocProvider(
           create: (BuildContext context) => NewBooksCubit(
             homeRepo: gitIt.get<HomeRepoImplement>(),
-          ),
+          )..fetchNewBooks(),
         ),
       ],
       child: MaterialApp.router(
