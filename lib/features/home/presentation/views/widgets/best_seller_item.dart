@@ -22,6 +22,7 @@ class BestSellerItem extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 16),
       child: GestureDetector(
         onTap: () => GoRouter.of(context).push(AppRouter.kBookDetailsView,extra: bookModel),
+        
         child: SizedBox(
           height: 125,
           child: Row(
@@ -30,7 +31,7 @@ class BestSellerItem extends StatelessWidget {
                   aspectRatio: 2.5 / 4,
                   child: FeaturedItem(
                       imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ??
-                          "https://islandpress.org/files/default_book_cover_2015.jpg")
+                         kStandardNetworkImage),
                  
                   ),
               const SizedBox(

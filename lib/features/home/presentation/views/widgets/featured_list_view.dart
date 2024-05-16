@@ -4,7 +4,7 @@ import 'package:go_book/core/widgets/custom_circular_indicator.dart';
 import 'package:go_book/core/widgets/custom_error_widget.dart';
 import 'package:go_book/features/home/presentation/manger/featured_books_cubit/featured_books_cubit.dart';
 import 'package:go_book/features/home/presentation/views/widgets/featured_item.dart';
-
+import 'package:go_book/constants.dart';
 class FreaturedListView extends StatelessWidget {
   const FreaturedListView({super.key});
 
@@ -23,7 +23,7 @@ class FreaturedListView extends StatelessWidget {
               return FeaturedItem(
                 imageUrl: state
                         .books[index].volumeInfo?.imageLinks?.thumbnail ??
-                    "https://islandpress.org/files/default_book_cover_2015.jpg",
+                    kStandardNetworkImage,
               );
             },
           ),

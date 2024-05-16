@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:go_book/constants.dart';
 import 'package:go_book/core/utils/styles.dart';
+import 'package:go_book/features/home/data/models/book_model/book_model/book_model.dart';
 import 'package:go_book/features/home/presentation/views/widgets/featured_item.dart';
 import 'book_rating.dart';
 import 'books_action.dart';
 
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({super.key});
-
+  const BookDetailsSection({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -17,13 +19,16 @@ class BookDetailsSection extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             horizontal: width * .2,
           ),
-          child: const FeaturedItem(imageUrl: "https://islandpress.org/files/default_book_cover_2015.jpg",),
+          child: FeaturedItem(
+            imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ??
+                kStandardNetworkImage,
+          ),
         ),
         const SizedBox(
           height: 20,
         ),
         Text(
-          'Practical flutter',
+          bookModel.volumeInfo?.title ?? 'No Title',
           style: Styles.textStyle30.copyWith(
             fontWeight: FontWeight.bold,
           ),
@@ -34,7 +39,7 @@ class BookDetailsSection extends StatelessWidget {
         Opacity(
           opacity: .7,
           child: Text(
-            'Rudyard Kipling',
+            bookModel.volumeInfo?.authors?[0] ?? 'No Auther',
             style: Styles.textStyle18.copyWith(
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.w500,

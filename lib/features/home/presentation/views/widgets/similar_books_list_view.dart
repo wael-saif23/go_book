@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_book/constants.dart';
 import 'package:go_book/core/widgets/custom_circular_indicator.dart';
 import 'package:go_book/core/widgets/custom_error_widget.dart';
 import 'package:go_book/features/home/presentation/manger/similar_books_cubit/similar_books_cubit.dart';
@@ -18,11 +19,11 @@ class SimilarBooksListview extends StatelessWidget {
     child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 5),
+          return  Padding(
+            padding:const EdgeInsets.symmetric(horizontal: 5),
             child: FeaturedItem(
-              imageUrl:
-                  "https://islandpress.org/files/default_book_cover_2015.jpg",
+              imageUrl:state.books[index].volumeInfo?.imageLinks?.thumbnail ?? kStandardNetworkImage
+                  ,
             ),
           );
         }),
