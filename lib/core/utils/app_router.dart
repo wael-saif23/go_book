@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_book/core/utils/service_locator.dart';
+import 'package:go_book/features/home/data/models/book_model/book_model/book_model.dart';
 
 import 'package:go_book/features/home/data/repos/home_repo_implement.dart';
 import 'package:go_book/features/home/presentation/manger/similar_books_cubit/similar_books_cubit.dart';
@@ -33,7 +34,7 @@ abstract class AppRouter {
         builder: (context, state) {
           return BlocProvider(
             create: (context) => SimilarBooksCubit(homeRepo: gitIt.get<HomeRepoImplement>() ),
-            child: const BookDetailsView(),
+            child:  BookDetailsView(bookModel: state.extra as BookModel,),
           );
         }),
     GoRoute(
