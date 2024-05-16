@@ -17,6 +17,7 @@ class SimilarBooksListview extends StatelessWidget {
   return SizedBox(
     height: MediaQuery.of(context).size.height * .15,
     child: ListView.builder(
+        itemCount: state.books.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return  Padding(
