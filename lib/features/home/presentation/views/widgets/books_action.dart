@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:go_book/core/utils/function/launch_url.dart';
+import 'package:go_book/features/home/data/models/book_model/book_model/book_model.dart';
+
 
 import '../../../../../core/widgets/custom_button.dart';
 
 class BooksAction extends StatelessWidget {
-  const BooksAction({super.key});
-
+  const BooksAction({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Row(
         children: [
-          Expanded(
+          const Expanded(
               child: CustomButton(
             text: 'Free',
             backgroundColor: Colors.white,
@@ -23,11 +26,14 @@ class BooksAction extends StatelessWidget {
           )),
           Expanded(
               child: CustomButton(
+            onPressed: () async {
+              launchCustomUr(context ,bookModel.accessInfo?.webReaderLink);
+            },
             fontSize: 16,
-            text: 'Free Preview',
-            backgroundColor: Color(0xffEF8262),
+            text: getText(bookModel),
+            backgroundColor: const Color(0xffEF8262),
             textColor: Colors.white,
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               topRight: Radius.circular(16),
               bottomRight: Radius.circular(16),
             ),
@@ -35,5 +41,17 @@ class BooksAction extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String getText(BookModel bookModel) {
+    if (bookModel.accessInfo != null) {
+      if (bookModel.accessInfo?.webReaderLink == null) {
+        return 'Not available';
+      } else {
+        return 'Preview';
+      }
+    } else {
+      return 'Not available';
+    }
   }
 }

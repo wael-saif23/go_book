@@ -12,7 +12,7 @@ final String error;
 
       ),
       child: Center(
-        child: Text(error),
+        child: Text(error,textAlign: TextAlign.center,),
       ),
     );
   }
